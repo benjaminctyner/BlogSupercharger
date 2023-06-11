@@ -47,7 +47,7 @@ export const AppLayout = ({ children, availableTokens }) => {
           )}
         </div>
       </div>
-      <div className='bg-gray-400'>{children}</div>
+      {children}
     </div>
   );
 };
