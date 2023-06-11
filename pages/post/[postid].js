@@ -40,17 +40,18 @@ export default function Post(props) {
         </div>
         <div className='p-4 my-2 border border-stone-200 rounded-md'>
           <div className='text-blue-600 text-2xl font-bold'>{props.title}</div>
+
           <div className='mt-2'>{props.metaDescription}</div>
         </div>
         <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>
           Keywords
         </div>
         <div className='flex flex-wrap pt-2 gap-1'>
-          {/* {props.keywords.split(',').map((keyword, i) => (
+          {props.keywords.split(',').map((keyword, i) => (
             <div key={i} className='p-2 rounded-full bg-slate-800 text-white'>
               <FontAwesomeIcon icon={faHashtag} /> {keyword}
             </div>
-          ))} */}
+          ))}
         </div>
         <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>
           Blog post
