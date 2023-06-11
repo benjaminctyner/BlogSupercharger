@@ -1,5 +1,6 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { faBrain } from '@fortawesome/free-solid-svg-icons';
+import { faTruckFast } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -38,7 +39,7 @@ export default function NewPost(props) {
     <div className='h-full overflow-hidden'>
       {!!generating && (
         <div className='text-green-500 flex h-full animate-pulse w-full flex-col justify-center items-center'>
-          <FontAwesomeIcon icon={faBrain} className='text-8xl' />
+          <FontAwesomeIcon icon={faTruckFast} className='text-8xl' />
           <h6>Generating...</h6>
         </div>
       )}
