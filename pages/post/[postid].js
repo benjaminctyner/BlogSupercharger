@@ -11,6 +11,7 @@ import { getAppProps } from '../../utils/getAppProps';
 
 export default function Post(props) {
   console.log('PROPS: ', props);
+  console.log(props.keywords.length, 'kw len');
   const router = useRouter();
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const { deletePost } = useContext(PostsContext);
@@ -109,16 +110,16 @@ export const getServerSideProps = withPageAuthRequired({
     });
     const post = await db.collection('posts').findOne({
       _id: new ObjectId(ctx.params.postId),
-      // _id: '6485c9d5fdbbe8bb85e40ed7',
+
       userId: user._id,
     });
 
     if (!post) {
       return {
-        // redirect: {
-        //   destination: '/post/new',
-        //   permanent: false,
-        // },
+        redirect: {
+          destination: '/post/new',
+          permanent: false,
+        },
       };
     }
 
@@ -132,7 +133,6 @@ export const getServerSideProps = withPageAuthRequired({
         postCreated: post.created.toString(),
         ...props,
       },
-      // props,
     };
   },
 });
