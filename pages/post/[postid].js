@@ -57,7 +57,7 @@ export default function Post(props) {
           Blog post
         </div>
         <div dangerouslySetInnerHTML={{ __html: props.postContent || '' }} />
-        {/* <div className='my-4'>
+        <div className='my-4'>
           {!showDeleteConfirm && (
             <button
               className='btn bg-red-600 hover:bg-red-700'
@@ -88,7 +88,7 @@ export default function Post(props) {
               </div>
             </div>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );

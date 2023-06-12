@@ -60,6 +60,7 @@ export const PostsProvider = ({ children }) => {
       });
       const json = await result.json();
       const postsResult = json.posts || [];
+      console.log(postsResult, 'results form getpost');
       if (postsResult.length < 5) {
         setNoMorePosts(true);
       }
