@@ -16,12 +16,10 @@ export default function Post(props) {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const { deletePost } = useContext(PostsContext);
   if (props.title.includes('<title>')) {
-    console.log('needs fix');
     var fixedTitle = props.title.substring(7, props.title.length - 8);
     console.log(fixedTitle);
   }
   if (props.title.includes('"')) {
-    console.log('needs fix');
     var fixedTitle = props.title.substring(1, props.title.length - 1);
     console.log(fixedTitle);
   }
