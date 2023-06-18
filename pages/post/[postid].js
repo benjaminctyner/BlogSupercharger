@@ -123,7 +123,7 @@ export const getServerSideProps = withPageAuthRequired({
       auth0Id: userSession.user.sub,
     });
     const post = await db.collection('posts').findOne({
-      _id: new ObjectId(ctx.query.postId),
+      _id: new ObjectId(ctx.params.postId),
 
       userId: user._id,
     });
