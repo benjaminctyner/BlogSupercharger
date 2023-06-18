@@ -34,6 +34,6 @@ export const getAppProps = async (ctx) => {
       created: created.toString(),
       ...rest,
     })),
-    postId: ctx.params.postId || null,
+    postId: ctx.params?.postId || null,
   };
 };
