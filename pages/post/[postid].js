@@ -15,6 +15,16 @@ export default function Post(props) {
   const router = useRouter();
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const { deletePost } = useContext(PostsContext);
+  if (props.title.includes('<title>')) {
+    console.log('needs fix');
+    var fixedTitle = props.title.substring(7, props.title.length - 8);
+    console.log(fixedTitle);
+  }
+  if (props.title.includes('"')) {
+    console.log('needs fix');
+    var fixedTitle = props.title.substring(1, props.title.length - 1);
+    console.log(fixedTitle);
+  }
 
   const handleDeleteConfirm = async () => {
     try {
@@ -40,7 +50,13 @@ export default function Post(props) {
           SEO title and meta description
         </div>
         <div className='p-4 my-2 border border-stone-200 rounded-md'>
-          <div className='text-blue-600 text-2xl font-bold'>{props.title}</div>
+          {fixedTitle ? (
+            <div className='text-blue-600 text-2xl font-bold'>{fixedTitle}</div>
+          ) : (
+            <div className='text-blue-600 text-2xl font-bold'>
+              {props.title}
+            </div>
+          )}
 
           <div className='mt-2'>{props.metaDescription}</div>
         </div>
