@@ -128,7 +128,18 @@ export const getServerSideProps = withPageAuthRequired({
       userId: user._id,
     });
 
+    if (!user) {
+      console.log('user not load');
+      return {
+        redirect: {
+          destination: '/post/new',
+          permanent: false,
+        },
+      };
+    }
+
     if (!post) {
+      console.log('post not load');
       return {
         redirect: {
           destination: '/post/new',
